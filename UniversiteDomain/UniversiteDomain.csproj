@@ -10,6 +10,12 @@
       <Folder Include="UseCases\EtudiantUseCases\Delete\" />
       <Folder Include="UseCases\EtudiantUseCases\Get\" />
       <Folder Include="UseCases\EtudiantUseCases\Update\" />
+      <Folder Include="UseCases\ParcoursUseCase\Delete\" />
+      <Folder Include="UseCases\ParcoursUseCase\Get\" />
+      <Folder Include="UseCases\ParcoursUseCase\Update\" />
+      <Folder Include="UseCases\UeUsesCases\Delete\" />
+      <Folder Include="UseCases\UeUsesCases\Get\" />
+      <Folder Include="UseCases\UeUsesCases\Update\" />
     </ItemGroup>
 
 </Project>
