@@ -47,7 +47,6 @@ public class AddUeDansParcoursUseCase(IRepositoryFactory repositoryFactory)
         // Vérifions tout d'abord que nous sommes bien connectés aux datasources
         ArgumentNullException.ThrowIfNull(repositoryFactory);
         ArgumentNullException.ThrowIfNull(repositoryFactory.UeRepository());
-        ArgumentNullException.ThrowIfNull(repositoryFactory.UeRepository());
         
         // On recherche l'ue
         List<Ue> ue = await repositoryFactory.UeRepository().FindByConditionAsync(e=>e.Id.Equals(idUe));;
@@ -63,7 +62,7 @@ public class AddUeDansParcoursUseCase(IRepositoryFactory repositoryFactory)
             // On recherche si l'ue qu'on veut ajouter n'existe pas déjà
             List<Ue> inscrites = parcours[0].UesEnseignees;    
             var trouve=inscrites.FindAll(e=>e.Id.Equals(idUe));
-            if (trouve !=null) throw new DuplicateUeDansParcoursException(idUe+" est déjà présente dans le parcours : "+idParcours);   
+            if (trouve.Count > 0) throw new DuplicateUeDansParcoursException(idUe+" est déjà présente dans le parcours : "+idParcours);   
         }
     }
 }
