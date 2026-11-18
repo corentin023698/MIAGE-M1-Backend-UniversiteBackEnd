@@ -67,18 +67,21 @@ public class UniversiteDbContext : DbContext
             .HasMany(ue => ue.Notes)
             .WithOne(n => n.Ue);
         
+        //TODO changement suggéré
         // Propriétés de la table Note
         // Clé primaire composite
         modelBuilder.Entity<Note>()
-            .HasKey(n => new { n.Etudiant, n.Ue });
+            .HasKey(n => new { n.EtudiantId, n.UeId });
         // ManyToOne vers Etudiant
         modelBuilder.Entity<Note>()
             .HasOne(n => n.Etudiant)
-            .WithMany(e => e.NotesObtenues);
+            .WithMany(e => e.NotesObtenues)
+            .HasForeignKey(n => n.EtudiantId);
         // ManyToOne vers Ue
         modelBuilder.Entity<Note>()
             .HasOne(n => n.Ue)
-            .WithMany(ue => ue.Notes);
+            .WithMany(ue => ue.Notes)
+            .HasForeignKey(n => n.UeId); 
     }
     
     public DbSet <Parcours>? Parcours { get; set; }
