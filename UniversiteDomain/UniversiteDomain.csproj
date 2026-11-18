@@ -9,7 +9,6 @@
     <ItemGroup>
       <Folder Include="UseCases\EtudiantUseCases\Delete\" />
       <Folder Include="UseCases\EtudiantUseCases\Update\" />
-      <Folder Include="UseCases\NoteUsesCases\Create\" />
       <Folder Include="UseCases\NoteUsesCases\Delete\" />
       <Folder Include="UseCases\NoteUsesCases\Get\" />
       <Folder Include="UseCases\NoteUsesCases\Update\" />
